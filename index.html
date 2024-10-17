@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>West-MEC Style Banner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+      * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .banner {
+            position: relative;
+            height: 700px; /* Fixed height for the banner */
+            overflow: hidden; /* Prevent overflow */
+            top: 0; /* Ensure it's at the top */
+            z-index: 1; /* Ensure it's above other content */
+        }
+
+        .background-video {
+            position: absolute; /* Position video absolutely */
+            top: 0; /* Align to the top */
+            left: 0; /* Align to the left */
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            object-fit: cover; /* Cover the area */
+            z-index: 1; /* Ensure video is behind other content */
+        }
+
+        .overlay {
+            position: absolute; /* Position overlay absolutely */
+            top: 0; /* Align to the top */
+            left: 0; /* Align to the left */
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            background: linear-gradient(to right, rgba(245, 127, 23, 0.8), rgba(255, 183, 77, 0.8)); /* Orange gradient */
+            z-index: 2; /* Ensure overlay is above the video */
+        }
+
+        .banner-content {
+            display: flex; /* Enables horizontal alignment of sections */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100%; /* Full height */
+            position: relative; /* Establish a new positioning context */
+            z-index: 3; /* Ensure content is above the overlay */
+            text-align: center; /* Center text */
+        }
+
+        .text-section {
+            color: white; /* Text color */
+            text-align: center; /* Center text */
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Adds depth with a shadow effect */
+        }
+
+        .text-section h1 {
+            font-size: 120px; /* Larger heading size for a more grand look */
+            margin-bottom: 15px; /* Space below heading */
+            font-family: Arial; /* Elegant serif font */
+            font-weight: 900; /* Make it bold for more emphasis */
+            letter-spacing: 2px; /* Increase space between letters */
+            font-style: italic;
+        }
+
+        .text-section p {
+            font-size: 40px; /* Larger paragraph text size */
+            font-weight: 900; /* Semi-bold for better visibility */
+            font-family: Arial; /* Use the same elegant font */
+            margin-top: 0; /* Remove top margin for better spacing */
+            letter-spacing: 1px; /* Increase space between letters */
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+            font-style: italic;
+        }
+
+
+        .bottom-bar {
+            background-color: #0a314d;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .bottom-bar button {
+            background-color: #1e88e5;
+            border: none;
+            padding: 15px 30px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .bottom-bar button:hover {
+            background-color: #1565c0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+            background-color: rgba(44, 62, 80, 0.7); /* Set a semi-transparent background color */
+            position: fixed; /* Use fixed positioning to keep the navbar at the top when scrolling */
+            top: 0;
+            width: 100%; /* Ensure the navbar spans the entire width */
+            z-index: 1000; /* Keeps the navbar above other content */
+            backdrop-filter: blur(10px); /* Optional: adds a blur effect behind the navbar for better visibility */
+        }
+
+        .navbar .logo {
+            max-height: 50px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #1abc9c;
+            border-radius: 5px;
+        }
+
+        .west-mec-social-media-section {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+        }
+        .west-mec-social-media-section a {
+            margin: 0 10px;
+            color: #FF8C00;
+            text-decoration: none;
+        }
+        .west-mec-footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .west-mec-footer a {
+            color: #FF8C00;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .companies-container {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hireheader {
+            color: #1a2b4a;
+            font-size: 60px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .hirefooter {
+            color: #333;
+            font-size: 30px;
+            font-weight: normal;
+            margin-bottom: 30px;
+        }
+
+        .companies-list {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .column {
+            text-align: center;
+            flex: 1;
+        }
+
+        .column p {
+            color: #1a2b4a;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .program-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 180px;
+            height: 120px;
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .program-button:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+
+        .program-button i {
+            font-size: 24px;
+            color: #ff8c00;
+            margin-bottom: 10px;
+        }
+
+        .program-button span {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            text-align: center;
+            color: #333;
+        }
+</style>
+
+    </style>
+</head>
+<body>
+  <div class="navbar">
+    <img src="/media/LogoDistrict.png" alt="Logo" class="logo">
+    <div class="nav-links">
+        <a href="#">About Us</a>
+        <a href="#">Counselors</a>
+        <a href="#">Resources</a>
+        <a href="#">Login</a>
+    </div>
+  </div>
+
+    <div class="banner">
+        <video autoplay muted loop class="background-video">
+            <source src="./media/Northeast Campus - West-MEC.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay"></div>
+        <div class="banner-content">
+            <div class="text-section">
+                <h1>A FASTER WAY FORWARD</h1>
+                <p>WELCOME TO GENERATION ORANGE</p>
+            </div>
+        </div>
+    </div>
+
+
+
+  <div class="bottom-bar">
+      <button>Recruiter Virtual Visit</button>
+      <button>On Campus Tour</button>
+      <button>Request a Recruiter</button>
+  </div>
+
+  <div class="button-container">
+    <button class="program-button">
+      <i class="fas fa-fast-forward"></i>
+      <span>Apply Now</span>
+    </button>
+    <button class="program-button">
+      <i class="fas fa-file-alt"></i>
+      <span>High School Programs Quick Guide</span>
+    </button>
+    <button class="program-button">
+      <i class="far fa-calendar-alt"></i>
+      <span>High School Program Calendars</span>
+    </button>
+    <button class="program-button">
+      <i class="fas fa-rocket"></i>
+      <span>High School Programs</span>
+    </button>
+    <button class="program-button">
+      <i class="fas fa-user-friends"></i>
+      <span>Adult Ed Programs</span>
+    </button>
+    <button class="program-button">
+      <i class="fas fa-clipboard-check"></i>
+      <span>Grades & Attendance</span>
+    </button>
+    <button class="program-button">
+      <i class="fas fa-folder-open"></i>
+      <span>Student & Parent Resources</span>
+    </button>
+    <button class="program-button">
+      <i class="fas fa-chalkboard-teacher"></i>
+      <span>Professional Development</span>
+    </button>
+    <button class="program-button">
+      <i class="far fa-building"></i>
+      <span>Facility Rental Form</span>
+    </button>
+  </div>
+
+  <div class="companies-container">
+    <h1 class="hireheader">A FASTER WAY FORWARD</h1>
+    <h2 class="hirefooter">Companies that have hired our students...</h2>
+    
+    <div class="companies-list">
+      <div class="column">
+        <p>APS/Palo Verde</p>
+        <p>AZ Pet Vet</p>
+        <p>Canyon State Electric</p>
+        <p>Department of Public Safety</p>
+        <p>Honeywell</p>
+        <p>Ohana Salon</p>
+        <p>Spooner Physical Therapy</p>
+      </div>
+      <div class="column">
+        <p>Athletico</p>
+        <p>Banner Health</p>
+        <p>Corning Advanced Optics</p>
+        <p>Envoy Air</p>
+        <p>Humana</p>
+        <p>Phoenix Children's Hospital</p>
+        <p>Subaru</p>
+      </div>
+      <div class="column">
+        <p>AerSale</p>
+        <p>Caliber Collision</p>
+        <p>CVS Pharmacy</p>
+        <p>Ford</p>
+        <p>Kearney Electric</p>
+        <p>Rummel Construction</p>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit temporibus non recusandae, ut debitis nemo soluta deleniti magni aspernatur perspiciatis hic aliquid sed voluptas autem qui vero fugit animi quae incidunt consequatur, similique, odio eaque? Placeat iure aut iusto dolores facere explicabo impedit sunt, vero soluta temporibus cumque cum veritatis, autem itaque sit sapiente nesciunt saepe obcaecati recusandae ex quisquam facilis blanditiis deserunt. Repellat totam iure dolore error accusamus, at, laborum asperiores quibusdam doloremque harum atque necessitatibus magnam laboriosam blanditiis sint natus quidem esse velit nobis. Soluta illum nulla rem nisi voluptatibus reprehenderit ex nobis, expedita in ut! Aperiam necessitatibus vero ipsa similique. Distinctio doloremque officiis minima. Eum eligendi libero a quidem labore at nihil ab sint, qui inventore minus cum, quaerat repellat soluta molestias eos neque nesciunt enim saepe deserunt, maiores nobis natus non molestiae? Dicta atque quae incidunt ipsum quibusdam corporis recusandae amet quas quaerat? Quibusdam, nulla cumque fugit dolorum aliquam iste architecto pariatur cum molestiae. Enim reiciendis saepe quisquam! Adipisci alias quam exercitationem distinctio magnam maiores deserunt suscipit quis animi reprehenderit aspernatur omnis, reiciendis provident voluptate cupiditate at quisquam. Nesciunt soluta blanditiis iusto eos natus hic nemo, pariatur similique aliquam beatae illo distinctio tenetur debitis fuga labore officia ex facilis vel? Hic omnis aperiam dolorem atque porro error nobis consequatur, repellat ipsa fugit maiores, repudiandae corrupti iure odio eligendi magni dolorum aliquid itaque in sint maxime id delectus corporis ex. Nobis tenetur architecto earum harum nemo repudiandae inventore voluptatem laudantium, maiores eveniet ipsa voluptatum rem quae libero doloribus mollitia temporibus fugit cum eos. Itaque rem eos in nobis ab obcaecati possimus, totam quos iure? Officiis minus hic pariatur adipisci magnam sequi, quam vel similique consequatur. Deserunt neque autem, rem atque quaerat deleniti ea nemo debitis ipsam provident amet suscipit porro odio a non fuga. Vel sunt architecto, et dolores eligendi quos aspernatur consequuntur consectetur a minus, quasi ab nemo voluptatem dolorem possimus autem voluptatibus error? Odio sunt quos voluptate earum ipsa, impedit doloribus eius, quae culpa quaerat suscipit eveniet nemo! Amet illo consequatur, et ad labore tenetur laborum voluptates beatae cum explicabo laudantium eos vero quisquam exercitationem in autem officia quidem eveniet libero nobis! Amet, autem tempore? Assumenda ipsam quidem, praesentium fugit veritatis laboriosam autem facilis ab inventore repudiandae asperiores deleniti corporis officiis beatae aperiam aspernatur voluptates minima fugiat. Molestiae, aspernatur! Quia maxime suscipit consequatur debitis quo rem explicabo soluta esse repellendus. Reprehenderit, consequatur dolores temporibus molestias id minima sunt nihil. Nam corrupti blanditiis facilis delectus, dignissimos accusamus consectetur error repellendus. Maxime consectetur repudiandae illo quasi quod ad vero earum molestiae temporibus laudantium minus officiis sunt, fugit in ex cumque harum quas, recusandae at eos aliquam quibusdam, cupiditate eveniet! Suscipit commodi, blanditiis eum voluptate facere necessitatibus! Rerum laboriosam beatae eius aperiam! Quae cum eligendi accusamus quia, ratione non libero eius inventore maxime exercitationem? Repudiandae, corrupti unde expedita facilis animi repellat sed in qui dolor enim minima maiores laboriosam iste consequatur esse iusto deserunt nemo ex labore impedit quaerat voluptate voluptas. Voluptate amet tenetur iusto. Eligendi aliquid, quisquam doloremque veritatis, molestias quos tempora impedit suscipit quibusdam consequatur animi fugit numquam incidunt illum, libero reiciendis. Nobis dolorum obcaecati numquam ut, adipisci ipsam. Mollitia, esse ad cum sequi iste nesciunt, explicabo atque consectetur at perspiciatis, quisquam sit non dolore soluta quaerat vel ea delectus? Exercitationem, magni minus! Reprehenderit vero suscipit exercitationem ullam laudantium inventore perspiciatis corrupti magni alias, eaque veritatis debitis vel qui provident ratione accusamus, odio repellat! Sit ullam exercitationem sunt reprehenderit inventore eaque odio nostrum natus fuga placeat iusto ut, possimus minus consequuntur voluptate fugit assumenda sed adipisci animi expedita magnam illo dolorum maiores? Facere nostrum a delectus minus blanditiis fuga officiis eum corrupti animi explicabo cumque consequatur doloribus voluptatibus perferendis commodi et ut vero quam inventore libero quia, ipsa, assumenda autem! Veniam, veritatis? Quisquam iure itaque accusantium, et quia id nemo laboriosam officia dolorem eaque, officiis quis fuga expedita sapiente tempore! Incidunt, dolores adipisci. Esse, eaque commodi. Nesciunt velit fugit nostrum rerum, a dolores sint animi harum praesentium! Laboriosam ab molestiae rerum ipsa corrupti libero atque? Eos corrupti maxime, quis possimus debitis facere consequatur magni ut enim iure omnis cum, sed molestias quibusdam soluta, dolorem tempore pariatur vel! Quae distinctio dicta magnam alias quibusdam fugiat praesentium odit perspiciatis nulla, laboriosam rem dolores libero eos voluptatum laborum impedit aperiam quaerat quisquam accusantium laudantium repudiandae. Aliquam, qui tenetur? Aspernatur aperiam quibusdam quo sequi nemo. Aspernatur laudantium dolore consectetur iusto. Vero maiores soluta at harum necessitatibus fugiat ut nulla inventore mollitia, minima, non maxime amet! Nisi corrupti aspernatur delectus id fugiat veritatis temporibus assumenda, quasi accusamus, commodi reiciendis. Repellendus accusantium quas quam deleniti commodi ad, illo alias quo libero est soluta fugiat aut molestias provident iusto maxime nesciunt et! Explicabo reiciendis blanditiis vel molestiae iure harum modi dolorem praesentium accusamus esse, rerum, illo maxime facere officiis placeat fuga hic quis distinctio omnis expedita suscipit repudiandae magnam delectus dolores. Nemo, libero neque ab debitis adipisci quae sit maxime ducimus omnis aliquam voluptatum impedit explicabo sint voluptates maiores dolorem labore, autem quos sunt optio veniam at! Voluptatum omnis voluptatibus odio dignissimos. Modi quis aperiam ratione ab voluptate quos dolores officiis porro eaque animi libero, accusantium ut reprehenderit eos eum, corporis sit. Autem cum libero, deleniti impedit omnis laborum aspernatur placeat? Ipsum consectetur recusandae quis? Quas mollitia beatae consequuntur itaque cupiditate. Corrupti inventore odio in nihil suscipit fugiat delectus minima, eaque aperiam numquam quibusdam, veritatis optio voluptate architecto recusandae asperiores, qui hic illo ducimus cupiditate. Consectetur sunt, totam dolorem iure libero tempore optio at nulla! Modi incidunt necessitatibus eum nostrum aspernatur in excepturi repellat nam, quo, autem ea quos nihil soluta nemo facere quod, sit libero eos exercitationem optio doloremque dolores eius fuga! Alias fugit incidunt velit voluptate. Cum ad aperiam temporibus maxime. Delectus, quia sequi. Cupiditate eos corrupti illo reiciendis debitis explicabo et, distinctio quia illum quam laudantium deleniti excepturi consequuntur dignissimos rem aliquam sapiente perspiciatis. Ipsa, modi! Autem laboriosam magni facilis id eos quod nesciunt distinctio sed nihil tempore nisi, hic omnis ut. Illum similique quia inventore beatae, magni vitae consectetur!</p>
+  </div>
+
+    <div class="west-mec-social-media-section">
+        <div>
+            <p>FOLLOW THE ORANGE WAVE</p>
+        </div>
+        <div>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">YouTube</a>
+        </div>
+    </div>
+
+    <!-- New footer section -->
+    <div class="west-mec-footer">
+        <p>5487 N. 99th Ave Glendale, AZ 85305</p>
+        <p>P: 623.738.0022 F: 623.738.0025 info@west-mec.org</p>
+        <div>
+            <a href="#">Site Map</a>
+            <a href="#">Request a Recruiter</a>
+            <a href="#">Request an In Person Tour</a>
+            <a href="#">Tax Credit Donations</a>
+            <a href="#">My Apps</a>
+            <a href="#">The Insider</a>
+        </div>
+        <p>West-MEC strives to provide web content that is accessible to all. We are committed to ensuring accessibility of all our web content for those with disabilities. If you are unable to access any content, please contact info@west-mec.org</p>
+    </div>
+</body>
+</html>
