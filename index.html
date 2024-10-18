@@ -19,104 +19,18 @@
             background-color: #f0f0f0;
         }
 
-        .banner {
-            position: relative;
-            height: 600px; /* Fixed height for the banner */
-            overflow: hidden; /* Prevent overflow */
-            top: 0; /* Ensure it's at the top */
-            z-index: 1; /* Ensure it's above other content */
-        }
-
-        .background-video {
-            position: absolute; /* Position video absolutely */
-            top: 0; /* Align to the top */
-            left: 0; /* Align to the left */
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            object-fit: cover; /* Cover the area */
-            z-index: 1; /* Ensure video is behind other content */
-        }
-
-        .overlay {
-            position: absolute; /* Position overlay absolutely */
-            top: 0; /* Align to the top */
-            left: 0; /* Align to the left */
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            background: linear-gradient(to right, rgba(245, 127, 23, 0.8), rgba(255, 183, 77, 0.8)); /* Orange gradient */
-            z-index: 2; /* Ensure overlay is above the video */
-        }
-
-        .banner-content {
-            display: flex; /* Enables horizontal alignment of sections */
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            height: 100%; /* Full height */
-            position: relative; /* Establish a new positioning context */
-            z-index: 3; /* Ensure content is above the overlay */
-            text-align: center; /* Center text */
-        }
-
-        .text-section {
-            color: white; /* Text color */
-            text-align: center; /* Center text */
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Adds depth with a shadow effect */
-        }
-
-        .text-section h1 {
-            font-size: 120px; /* Larger heading size for a more grand look */
-            margin-bottom: 15px; /* Space below heading */
-            font-family: Arial; /* Elegant serif font */
-            font-weight: 900; /* Make it bold for more emphasis */
-            letter-spacing: 2px; /* Increase space between letters */
-            font-style: italic;
-        }
-
-        .text-section p {
-            font-size: 40px; /* Larger paragraph text size */
-            font-weight: 900; /* Semi-bold for better visibility */
-            font-family: Arial; /* Use the same elegant font */
-            margin-top: 0; /* Remove top margin for better spacing */
-            letter-spacing: 1px; /* Increase space between letters */
-            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
-            font-style: italic;
-        }
-
-
-        .bottom-bar {
-            background-color: #0a314d;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .bottom-bar button {
-            background-color: #1e88e5;
-            border: none;
-            padding: 15px 30px;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .bottom-bar button:hover {
-            background-color: #1565c0;
-        }
-
+                /* Navbar */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px 50px;
-            background-color: rgba(44, 62, 80, 0.7); /* Set a semi-transparent background color */
-            position: fixed; /* Use fixed positioning to keep the navbar at the top when scrolling */
+            background-color: rgba(44, 62, 80, 0.7);
+            position: fixed;
             top: 0;
-            width: 100%; /* Ensure the navbar spans the entire width */
-            z-index: 1000; /* Keeps the navbar above other content */
-            backdrop-filter: blur(10px); /* Optional: adds a blur effect behind the navbar for better visibility */
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
         }
 
         .navbar .logo {
@@ -134,36 +48,183 @@
             font-size: 16px;
             font-weight: bold;
             padding: 10px 15px;
-            transition: background-color 0.3s ease;
+            position: relative;
+            transition: color 0.3s ease, background-color 0.3s ease;
         }
 
         .nav-links a:hover {
-            background-color: #1abc9c;
-            border-radius: 5px;
+            background-color: rgba(44, 62, 80, 0.9);
+            color: #f57f17;
         }
 
-        .west-mec-social-media-section {
-            background-color: #f0f0f0;
-            padding: 20px;
+        .nav-links a:hover::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 3px;
+            background-color: #f57f17;
+            transition: width 0.3s ease;
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: #f57f17;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 3px;
+            background-color: #f57f17;
+            width: 100%;
+        }
+
+        /* Banner */
+        .banner {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+            top: 0;
+            z-index: 1;
+        }
+
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(245, 127, 23, 0.8), rgba(255, 183, 77, 0.8));
+            z-index: 2;
+        }
+
+        .banner-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            position: relative;
+            z-index: 3;
             text-align: center;
         }
-        .west-mec-social-media-section a {
-            margin: 0 10px;
-            color: #FF8C00;
-            text-decoration: none;
-        }
-        .west-mec-footer {
-            background-color: #333;
+
+        .text-section {
             color: white;
-            padding: 20px;
             text-align: center;
-        }
-        .west-mec-footer a {
-            color: #FF8C00;
-            text-decoration: none;
-            margin: 0 10px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
         }
 
+        .text-section h1 {
+            font-size: 120px;
+            margin-bottom: 15px;
+            font-family: Arial;
+            font-weight: 900;
+            letter-spacing: 2px;
+            font-style: italic;
+        }
+
+        .text-section p {
+            font-size: 40px;
+            font-weight: 900;
+            font-family: Arial;
+            margin-top: 0;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+            font-style: italic;
+        }
+
+        /* Bottom Banner */
+        .bottom-bar {
+            background-color: #0a314d;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .bottom-bar-text {
+            color: white;
+            font-size: large;
+            padding-right: 50px;
+        }
+
+        .bottom-bar button {
+            background-color: transparent;
+            border: 2px black solid;
+            padding: 15px 30px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: border 0.3s ease;
+        }
+
+        .bottom-bar button:hover {
+            border: 2px rgba(245, 127, 23) solid;
+        }
+
+        /* Button Container */
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .program-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 300px;
+            height: 200px;
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .program-button:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+
+        .program-button i {
+            font-size: 24px;
+            color: #ff8c00;
+            margin-bottom: 10px;
+        }
+
+        .program-button span {
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            font-weight: 100;
+            text-align: center;
+            color: #333;
+        }
+
+        /* Companies */
         .companies-container {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -202,47 +263,33 @@
             font-size: 14px;
         }
 
-        .button-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
+        /* Social Media Section */
+        .west-mec-social-media-section {
+            background-color: #f0f0f0;
             padding: 20px;
-        }
-
-        .program-button {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 180px;
-            height: 120px;
-            background-color: white;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            padding: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .program-button:hover {
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-            transform: translateY(-2px);
-        }
-
-        .program-button i {
-            font-size: 24px;
-            color: #ff8c00;
-            margin-bottom: 10px;
-        }
-
-        .program-button span {
-            font-family: Arial, sans-serif;
-            font-size: 14px;
             text-align: center;
-            color: #333;
         }
+
+        .west-mec-social-media-section a {
+            margin: 0 10px;
+            color: #FF8C00;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        .west-mec-footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .west-mec-footer a {
+            color: #FF8C00;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
 </style>
 
     </style>
@@ -275,7 +322,7 @@
 
 
   <div class="bottom-bar">
-    <p>Ready to see our orange impact in action?</p>
+    <p class="bottom-bar-text">Ready to see our orange impact in action?</p>
     <div class="bottom-bar-buttons">
         <button>Recruiter Virtual Visit</button>
         <button>On Campus Tour</button>
