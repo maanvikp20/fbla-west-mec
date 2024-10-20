@@ -6,6 +6,7 @@
     <title>West-MEC Style Banner</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="./media/favicon.ico" type="image/x-icon">
     <style>
       * {
             margin: 0;
@@ -87,7 +88,7 @@
         /* Banner */
         .banner {
             position: relative;
-            height: 600px;
+            height: 650px;
             overflow: hidden;
             top: 0;
             z-index: 1;
@@ -224,72 +225,211 @@
             color: #333;
         }
 
-        /* Companies */
-        .companies-container {
-            font-family: Arial, sans-serif;
+        /*Map*/
+        .visit-us-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            max-width: 800px;
+            margin: 50px;
+        }
+
+        .map-container {
+            margin: 20px 0; /* Adds space between the heading and the map */
+        }
+
+        .map-container iframe {
+            border: 5px solid black;
+            border-radius: 10px; /* Rounds the corners of the border */
+        }
+
+        h2 {
+            font-size: 48px;
+            color: #1a2b4a; /* Customize the font color */
+            font-weight: 900;
+            font-style: italic;
+        }
+
+        /* Companies */
+        .hire-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start; /* Keep alignment at the start for consistent vertical alignment */
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            gap: 100px; /* Adjusted gap for better balance */
+        }
+
+        .video-section {
+            flex: 1;
+            margin-right: 80px;
+            text-align: center; /* Center-align the heading and video */
+        }
+
+        .video-heading {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px; /* Space between heading and video */
+            color: #1a2b4a; /* Same color as the text headings */
+        }
+
+        .video-section video {
+            width: 100%; /* Make the video responsive */
+            max-width: 800px; /* Set a max width for the video */
+            height: auto; /* Maintain aspect ratio */
+            border: 5px solid black;
+            border-radius: 10px;
+        }
+
+        .companies-container {
+            flex: 1;
+            font-family: Arial, sans-serif;
+            text-align: center;
         }
 
         .hireheader {
             color: #1a2b4a;
             font-size: 60px;
-            font-weight: bold;
+            font-weight: 900;
             margin-bottom: 10px;
+            font-style: italic;
         }
 
         .hirefooter {
             color: #333;
             font-size: 30px;
-            font-weight: normal;
+            font-weight: 900;
             margin-bottom: 30px;
         }
 
         .companies-list {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around; /* Adjusted for better layout */
+            gap: 50px; /* Reduced gap for better spacing */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
         }
 
         .column {
             text-align: center;
             flex: 1;
+            min-width: 200px; /* Minimum width for columns to ensure they don't get too small */
         }
 
         .column p {
             color: #1a2b4a;
-            margin: 10px 0;
-            font-size: 14px;
+            margin: 10px 0; /* Reduced margin for better spacing */
+            font-size: 20px;
+            font-weight: 700;
+            width: 100%; /* Ensuring the text takes the full width of its column */
         }
+
+
 
         /* Social Media Section */
         .west-mec-social-media-section {
-            background-color: #f0f0f0;
-            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        .orange-wave{
+            color: white;
+            background-color: #f57f17;
+            font-size: 48px;
+            font-weight: 900;
+            font-style: italic;
+            padding: 10px 0;
+            width: 100%;
+            margin: 0;
+            box-sizing: border-box;
             text-align: center;
         }
 
-        .west-mec-social-media-section a {
-            margin: 0 10px;
-            color: #FF8C00;
-            text-decoration: none;
+        .social-media-links {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            width: 100%;
+            position: relative;
+        }
+
+        .social-media-item {
+            position: relative;
+            width: 100%;
+        }
+
+        .social-media-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .social-media-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: orange;
+            color: white;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-media-button:hover {
+            background-color: #1a2b4a;
         }
 
         /* Footer */
-        .west-mec-footer {
-            background-color: #333;
-            color: white;
-            padding: 20px;
+        .footer {
+            background-color: #1a2b4a;
+            padding: 30px;
             text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
         }
 
-        .west-mec-footer a {
-            color: #FF8C00;
-            text-decoration: none;
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        .social-media-icons {
+            margin: 20px 0;
+        }
+
+        .social-media-icons a {
             margin: 0 10px;
+            display: inline-block;
         }
 
+        .social-media-icons img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .footer-note p {
+            font-size: 14px;
+            margin-top: 20px;
+        }
 </style>
 
     </style>
@@ -332,29 +472,17 @@
 
   <div class="button-container">
     <button class="program-button">
-      <i class="fas fa-fast-forward"></i>
-      <span>Apply Now</span>
-    </button>
-    <button class="program-button">
-      <i class="fas fa-file-alt"></i>
-      <span>High School Programs Quick Guide</span>
-    </button>
-    <button class="program-button">
       <i class="far fa-calendar-alt"></i>
       <span>High School Program Calendars</span>
     </button>
     <button class="program-button">
-      <i class="fas fa-rocket"></i>
-      <span>High School Programs</span>
-    </button>
-    <button class="program-button">
       <i class="fas fa-user-friends"></i>
-      <span>Adult Ed Programs</span>
+      <span>Programs</span>
     </button>
-    <button class="program-button">
-      <i class="fas fa-clipboard-check"></i>
-      <span>Grades & Attendance</span>
-    </button>
+    <button class="program-button" onclick="window.location.href='https://focus.west-mec.edu/focus/Modules.php?modname=misc%2FPortal.php';">
+        <i class="fas fa-clipboard-check"></i>
+        <span>Grades & Attendance</span>
+    </button>      
     <button class="program-button">
       <i class="fas fa-folder-open"></i>
       <span>Student & Parent Resources</span>
@@ -363,76 +491,112 @@
       <i class="fas fa-chalkboard-teacher"></i>
       <span>Professional Development</span>
     </button>
-    <button class="program-button">
-      <i class="far fa-building"></i>
-      <span>Facility Rental Form</span>
-    </button>
   </div>
 
-  <div class="companies-container">
-    <h1 class="hireheader">A FASTER WAY FORWARD</h1>
-    <h2 class="hirefooter">Companies that have hired our students...</h2>
-    
-    <div class="companies-list">
-      <div class="column">
-        <p>APS/Palo Verde</p>
-        <p>AZ Pet Vet</p>
-        <p>Canyon State Electric</p>
-        <p>Department of Public Safety</p>
-        <p>Honeywell</p>
-        <p>Ohana Salon</p>
-        <p>Spooner Physical Therapy</p>
-      </div>
-      <div class="column">
-        <p>Athletico</p>
-        <p>Banner Health</p>
-        <p>Corning Advanced Optics</p>
-        <p>Envoy Air</p>
-        <p>Humana</p>
-        <p>Phoenix Children's Hospital</p>
-        <p>Subaru</p>
-      </div>
-      <div class="column">
-        <p>AerSale</p>
-        <p>Caliber Collision</p>
-        <p>CVS Pharmacy</p>
-        <p>Ford</p>
-        <p>Kearney Electric</p>
-        <p>Rummel Construction</p>
-      </div>
+  <div class="visit-us-container">
+        <h2>Come Visit Us</h2>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4694.724028867614!2d-112.09405498808286!3d33.69157710020937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b6f81f1c0ca5d%3A0xf115943748fc5b2b!2sWest-MEC%20-%20Northeast%20Campus!5e0!3m2!1sen!2sus!4v1729366196907!5m2!1sen!2sus" 
+                width="1000" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
     </div>
-  </div>
 
-  <div>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit temporibus non recusandae, ut debitis nemo soluta deleniti magni aspernatur perspiciatis hic aliquid sed voluptas autem qui vero fugit animi quae incidunt consequatur, similique, odio eaque? Placeat iure aut iusto dolores facere explicabo impedit sunt, vero soluta temporibus cumque cum veritatis, autem itaque sit sapiente nesciunt saepe obcaecati recusandae ex quisquam facilis blanditiis deserunt. Repellat totam iure dolore error accusamus, at, laborum asperiores quibusdam doloremque harum atque necessitatibus magnam laboriosam blanditiis sint natus quidem esse velit nobis. Soluta illum nulla rem nisi voluptatibus reprehenderit ex nobis, expedita in ut! Aperiam necessitatibus vero ipsa similique. Distinctio doloremque officiis minima. Eum eligendi libero a quidem labore at nihil ab sint, qui inventore minus cum, quaerat repellat soluta molestias eos neque nesciunt enim saepe deserunt, maiores nobis natus non molestiae? Dicta atque quae incidunt ipsum quibusdam corporis recusandae amet quas quaerat? Quibusdam, nulla cumque fugit dolorum aliquam iste architecto pariatur cum molestiae. Enim reiciendis saepe quisquam! Adipisci alias quam exercitationem distinctio magnam maiores deserunt suscipit quis animi reprehenderit aspernatur omnis, reiciendis provident voluptate cupiditate at quisquam. Nesciunt soluta blanditiis iusto eos natus hic nemo, pariatur similique aliquam beatae illo distinctio tenetur debitis fuga labore officia ex facilis vel? Hic omnis aperiam dolorem atque porro error nobis consequatur, repellat ipsa fugit maiores, repudiandae corrupti iure odio eligendi magni dolorum aliquid itaque in sint maxime id delectus corporis ex. Nobis tenetur architecto earum harum nemo repudiandae inventore voluptatem laudantium, maiores eveniet ipsa voluptatum rem quae libero doloribus mollitia temporibus fugit cum eos. Itaque rem eos in nobis ab obcaecati possimus, totam quos iure? Officiis minus hic pariatur adipisci magnam sequi, quam vel similique consequatur. Deserunt neque autem, rem atque quaerat deleniti ea nemo debitis ipsam provident amet suscipit porro odio a non fuga. Vel sunt architecto, et dolores eligendi quos aspernatur consequuntur consectetur a minus, quasi ab nemo voluptatem dolorem possimus autem voluptatibus error? Odio sunt quos voluptate earum ipsa, impedit doloribus eius, quae culpa quaerat suscipit eveniet nemo! Amet illo consequatur, et ad labore tenetur laborum voluptates beatae cum explicabo laudantium eos vero quisquam exercitationem in autem officia quidem eveniet libero nobis! Amet, autem tempore? Assumenda ipsam quidem, praesentium fugit veritatis laboriosam autem facilis ab inventore repudiandae asperiores deleniti corporis officiis beatae aperiam aspernatur voluptates minima fugiat. Molestiae, aspernatur! Quia maxime suscipit consequatur debitis quo rem explicabo soluta esse repellendus. Reprehenderit, consequatur dolores temporibus molestias id minima sunt nihil. Nam corrupti blanditiis facilis delectus, dignissimos accusamus consectetur error repellendus. Maxime consectetur repudiandae illo quasi quod ad vero earum molestiae temporibus laudantium minus officiis sunt, fugit in ex cumque harum quas, recusandae at eos aliquam quibusdam, cupiditate eveniet! Suscipit commodi, blanditiis eum voluptate facere necessitatibus! Rerum laboriosam beatae eius aperiam! Quae cum eligendi accusamus quia, ratione non libero eius inventore maxime exercitationem? Repudiandae, corrupti unde expedita facilis animi repellat sed in qui dolor enim minima maiores laboriosam iste consequatur esse iusto deserunt nemo ex labore impedit quaerat voluptate voluptas. Voluptate amet tenetur iusto. Eligendi aliquid, quisquam doloremque veritatis, molestias quos tempora impedit suscipit quibusdam consequatur animi fugit numquam incidunt illum, libero reiciendis. Nobis dolorum obcaecati numquam ut, adipisci ipsam. Mollitia, esse ad cum sequi iste nesciunt, explicabo atque consectetur at perspiciatis, quisquam sit non dolore soluta quaerat vel ea delectus? Exercitationem, magni minus! Reprehenderit vero suscipit exercitationem ullam laudantium inventore perspiciatis corrupti magni alias, eaque veritatis debitis vel qui provident ratione accusamus, odio repellat! Sit ullam exercitationem sunt reprehenderit inventore eaque odio nostrum natus fuga placeat iusto ut, possimus minus consequuntur voluptate fugit assumenda sed adipisci animi expedita magnam illo dolorum maiores? Facere nostrum a delectus minus blanditiis fuga officiis eum corrupti animi explicabo cumque consequatur doloribus voluptatibus perferendis commodi et ut vero quam inventore libero quia, ipsa, assumenda autem! Veniam, veritatis? Quisquam iure itaque accusantium, et quia id nemo laboriosam officia dolorem eaque, officiis quis fuga expedita sapiente tempore! Incidunt, dolores adipisci. Esse, eaque commodi. Nesciunt velit fugit nostrum rerum, a dolores sint animi harum praesentium! Laboriosam ab molestiae rerum ipsa corrupti libero atque? Eos corrupti maxime, quis possimus debitis facere consequatur magni ut enim iure omnis cum, sed molestias quibusdam soluta, dolorem tempore pariatur vel! Quae distinctio dicta magnam alias quibusdam fugiat praesentium odit perspiciatis nulla, laboriosam rem dolores libero eos voluptatum laborum impedit aperiam quaerat quisquam accusantium laudantium repudiandae. Aliquam, qui tenetur? Aspernatur aperiam quibusdam quo sequi nemo. Aspernatur laudantium dolore consectetur iusto. Vero maiores soluta at harum necessitatibus fugiat ut nulla inventore mollitia, minima, non maxime amet! Nisi corrupti aspernatur delectus id fugiat veritatis temporibus assumenda, quasi accusamus, commodi reiciendis. Repellendus accusantium quas quam deleniti commodi ad, illo alias quo libero est soluta fugiat aut molestias provident iusto maxime nesciunt et! Explicabo reiciendis blanditiis vel molestiae iure harum modi dolorem praesentium accusamus esse, rerum, illo maxime facere officiis placeat fuga hic quis distinctio omnis expedita suscipit repudiandae magnam delectus dolores. Nemo, libero neque ab debitis adipisci quae sit maxime ducimus omnis aliquam voluptatum impedit explicabo sint voluptates maiores dolorem labore, autem quos sunt optio veniam at! Voluptatum omnis voluptatibus odio dignissimos. Modi quis aperiam ratione ab voluptate quos dolores officiis porro eaque animi libero, accusantium ut reprehenderit eos eum, corporis sit. Autem cum libero, deleniti impedit omnis laborum aspernatur placeat? Ipsum consectetur recusandae quis? Quas mollitia beatae consequuntur itaque cupiditate. Corrupti inventore odio in nihil suscipit fugiat delectus minima, eaque aperiam numquam quibusdam, veritatis optio voluptate architecto recusandae asperiores, qui hic illo ducimus cupiditate. Consectetur sunt, totam dolorem iure libero tempore optio at nulla! Modi incidunt necessitatibus eum nostrum aspernatur in excepturi repellat nam, quo, autem ea quos nihil soluta nemo facere quod, sit libero eos exercitationem optio doloremque dolores eius fuga! Alias fugit incidunt velit voluptate. Cum ad aperiam temporibus maxime. Delectus, quia sequi. Cupiditate eos corrupti illo reiciendis debitis explicabo et, distinctio quia illum quam laudantium deleniti excepturi consequuntur dignissimos rem aliquam sapiente perspiciatis. Ipsa, modi! Autem laboriosam magni facilis id eos quod nesciunt distinctio sed nihil tempore nisi, hic omnis ut. Illum similique quia inventore beatae, magni vitae consectetur!</p>
-  </div>
+    <div class="hire-container">
+        <div class="video-section">
+            <h2 class="video-heading">See why people hire from West-MEC</h2>
+            <video controls>
+                <source src="./media/Why I Hire West-MEC - Adelante Healthcare.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video controls>
+                <source src="./media/Why I Hire West-MEC - Nash Powersports.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video controls>
+                <source src="./media/Why I Hire West-MEC - Coreslab Structures.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="companies-container">
+            <h1 class="hireheader">A FASTER WAY FORWARD</h1>
+            <h2 class="hirefooter">Companies that have hired our students...</h2>
+            <div class="companies-list">
+                <div class="column">
+                    <p>APS/Palo Verde</p>
+                    <p>AZ Pet Vet</p>
+                    <p>Canyon State Electric</p>
+                    <p>Department of Public Safety</p>
+                    <p>Honeywell</p>
+                    <p>Ohana Salon</p>
+                    <p>Spooner Physical Therapy</p>
+                </div>
+                <div class="column">
+                    <p>Athletico</p>
+                    <p>Banner Health</p>
+                    <p>Corning Advanced Optics</p>
+                    <p>Envoy Air</p>
+                    <p>Humana</p>
+                    <p>Phoenix Children's Hospital</p>
+                    <p>Subaru</p>
+                </div>
+                <div class="column">
+                    <p>AerSale</p>
+                    <p>Caliber Collision</p>
+                    <p>CVS Pharmacy</p>
+                    <p>Ford</p>
+                    <p>Kearney Electric</p>
+                    <p>Rummel Construction</p>
+                </div>
+            </div>
+        </div>
+    </div>    
 
     <div class="west-mec-social-media-section">
-        <div>
+        <div class="orange-wave">
             <p>FOLLOW THE ORANGE WAVE</p>
         </div>
-        <div>
-            <a href="#">Facebook</a>
-            <a href="#">Twitter</a>
-            <a href="#">Instagram</a>
-            <a href="#">LinkedIn</a>
-            <a href="#">YouTube</a>
+        <div class="social-media-links">
+            <div class="social-media-item">
+                <a href="#"><img src="./media/socialimage1.jpg"></a>
+                <div class="social-media-button"><i class="fa-brands fa-facebook"></i></div>
+            </div>
+            <div class="social-media-item">
+                <a href="#"><img src="./media/socialimage2.jpg"></a>
+                <div class="social-media-button"><i class="fa-brands fa-twitter"></i></div>
+            </div>
+            <div class="social-media-item">
+                <a href="#"><img src="./media/socialimage3.jpg"></a>
+                <div class="social-media-button"><i class="fa-brands fa-instagram"></i></div>
+            </div>
+            <div class="social-media-item">
+                <a href="#"><img src="./media/socialimage4.jpg"></a>
+                <div class="social-media-button"><i class="fa-brands fa-linkedin"></i></div>
+            </div>
+            <div class="social-media-item">
+                <a href="#"><img src="./media/socialimage5.jpg"></a>
+                <div class="social-media-button"><i class="fa-brands fa-youtube"></i></div>
+            </div>
         </div>
     </div>
 
-    <!-- New footer section -->
-    <div class="west-mec-footer">
-        <p>5487 N. 99th Ave Glendale, AZ 85305</p>
-        <p>P: 623.738.0022 F: 623.738.0025 info@west-mec.org</p>
-        <div>
-            <a href="#">Site Map</a>
-            <a href="#">Request a Recruiter</a>
-            <a href="#">Request an In Person Tour</a>
-            <a href="#">Tax Credit Donations</a>
-            <a href="#">My Apps</a>
-            <a href="#">The Insider</a>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="contact-info">
+                <p>5487 N. 99th Ave, Glendale, AZ 85305</p>
+                <p>P: 623.738.0022 &nbsp;&nbsp;|&nbsp;&nbsp; F: 623.738.0025 &nbsp;&nbsp;|&nbsp;&nbsp; info@west-mec.org</p>
+            </div>
+            <div class="social-media-icons">
+                <a href="#" class="social-button"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="social-button"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="social-button"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-button"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="social-button"><i class="fa-brands fa-youtube"></i></a>
+            </div>            
+            <div class="footer-note">
+                <p>West-MEC strives to provide web content that is accessible to all. If you are unable to access any content, please contact info@west-mec.org.</p>
+            </div>
         </div>
-        <p>West-MEC strives to provide web content that is accessible to all. We are committed to ensuring accessibility of all our web content for those with disabilities. If you are unable to access any content, please contact info@west-mec.org</p>
-    </div>
+    </footer>    
 </body>
 </html>
